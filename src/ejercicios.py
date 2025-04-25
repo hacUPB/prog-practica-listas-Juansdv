@@ -36,7 +36,6 @@ def es_primo(n):
         return True
     
         
-es_primo(1)
 
 # Ejercicio 4: Transponer una matriz
 def transponer_matriz(matriz):
@@ -107,9 +106,13 @@ def lista_ordenada(lista):
 # Ejercicio 10: Cifrar un texto con el cifrado César
 def cifrado_cesar(texto, desplazamiento):
 
-    palabras = ""
+    contador = 0
+    palabras= ""
     for letra in texto:
         codigo = ord(letra) + desplazamiento
+        if codigo > 122:
+            codigo = 97 + contador
+            contador += 1
         cesar = chr(codigo)
         palabras += cesar
     return palabras
